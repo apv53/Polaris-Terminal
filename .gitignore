@@ -1,0 +1,52 @@
+#ENVIRONMENT VARIABLES
+.env
+.env.*
+!.env.example
+backend/env/
+
+backend/.venv/
+backend/venv/
+
+#PYTHON
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+
+#PYTHON PACKAGE METADATA
+*.egg-info/
+
+#TEST/COVERAGE
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+#BUILD
+build/
+dist/
+
+#IDE
+.vscode/
+.idea/
+
+#OS
+.DS_Store
+Thumbs.db
+
+#LOGS
+*.log
+
+#TEMPORARY
+*.tmp
+*.swp
+*~
+
+#LOCAL DATABASES
+*.sqlite3
+*.db
+
+#STRUCTURE FILE
+structure.txt
