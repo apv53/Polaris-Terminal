@@ -55,7 +55,8 @@ jobs:
       - name: Install Dependencies
         run: uv sync --dev
 
-      - name: Verify Installation
-        run: |
-          python --version
-          uv --version
+      - name: Run Test Suite
+        env:
+            APP_ENVIRONMENT: testing
+            DATABASE_URL: postgresql+asyncpg://postgres:password@localhost:5432/polaris_terminal_test
+        run: uv run pytest -v
