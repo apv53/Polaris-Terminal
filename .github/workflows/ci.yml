@@ -18,6 +18,24 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:17
+
+        env:
+          POSTGRES_DB: polaris_terminal_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+
+        ports:
+          - 5432:5432
+
+        options: >-
+          --health-cmd="pg_isready -U postgres -d polaris_terminal_test"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
     defaults:
       run:
         working-directory: backend
@@ -33,8 +51,8 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v6
-      
-      - name: Install dependencies
+
+      - name: Install Dependencies
         run: uv sync --dev
 
       - name: Verify Installation
