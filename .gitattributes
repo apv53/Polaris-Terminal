@@ -1,0 +1,26 @@
+# Normalize text files to LF in the repository
+* text=auto
+
+# Python
+*.py text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# YAML
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Docker
+Dockerfile text eol=lf
+*.Dockerfile text eol=lf
+
+# TOML
+*.toml text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Windows scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf

@@ -11,8 +11,8 @@ services:
 
     restart: unless-stopped
 
-    env_file:
-      - ./backend/.env
+    environment:
+      APP_ENVIRONMENT: docker
   
     ports:
       - "8000:8000"
@@ -21,8 +21,6 @@ services:
       - ./backend:/app
     
     command:
-      - uv
-      - run
       - uvicorn
       - app.main:app
       - --host
